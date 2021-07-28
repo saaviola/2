@@ -1,0 +1,61 @@
+<html>
+  <head>
+    <title>hello</title>
+  </head>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Mountains+of+Christmas:wght@700&display=swap');
+    
+    html {
+      background: #000000;
+      color: #FFFFFF;
+      font-family: 'Mountains of Christmas', cursive;
+    }
+    h1 {
+      padding: 100px;
+    }
+    .bulb {
+      width: 50px;
+      height: 50px;
+      display:inline-block;
+      margin: 0px 10px;
+      border-radius: 100% 4px;
+      transform: rotate(-45deg);
+    }
+    .bulb:nth-child(odd) {
+      background: #ff0000;
+      opacity: 1;
+      box-shadow: 1px 1px 15px #ff0000, -1px 1px 15px #ff0000;
+      animation: bulb-pulse-1 0.8s linear 0s infinite alternate;
+    }
+    .bulb:nth-child(even) {
+      background: #0c0;
+      opacity: .3;
+      box-shadow: none;
+      animation: bulb-pulse-2 0.8s linear 0s infinite alternate;
+    }
+    @keyframes bulb-pulse-1 {
+        from {box-shadow: 1px 1px 15px #ff0000, -1px -1px 15px #ff0000; opacity: 1;}
+        to {box-shadow: none; opacity: .3;}       
+     }
+     @keyframes bulb-pulse-2 {
+        from {box-shadow: none; opacity: .3;}
+        to {box-shadow: 1px 1px 15px #0c0, -1px -1px 15px #0c0; opacity: 1;}       
+     }
+  </style>
+  <body>
+    <center>
+     <div id="lights">
+<script>
+  for(var i=0; i<18; i++) {
+    var bulb = document.createElement("div");
+    bulb.className = "bulb";
+    var rand = Math.floor(Math.random() * 180) + 1;
+    bulb.style.transform = "rotate("+rand+"deg)";
+    document.getElementById("lights").appendChild(bulb);
+  }
+</script>
+     </div>
+       <h1>Merry Christmas!</h1>
+     </center>
+  </body>
+</html>
